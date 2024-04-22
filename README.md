@@ -12,7 +12,7 @@ docker run -d \
   --network=host \
   ghcr.io/home-assistant/home-assistant:stable \ > /dev/null
 ```
-#######################################
+
 #  Samba konfigurierung
 ```
 sudo nvim /etc/samba/smb.conf
@@ -41,11 +41,8 @@ sudo smbpasswd -a gandhi
 sudo systemctl start smbd
 sudo systemctl restart smbd
 ```
-#######################################
-# ufw configuration
-
-#######################################
 # Windows:
+```
 function remount {
     $null = net use X: /delete 2>&1
     $null = net use Y: /delete 2>&1
@@ -58,3 +55,4 @@ function remount {
         Write-Host "All commands completed successfully."
     }
 }
+```
