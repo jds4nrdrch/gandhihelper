@@ -1,6 +1,7 @@
 # gandhihelper
 gandhihelper
-
+Home assistant Installation
+```
 docker run -d \
   --name homeassistant \
   --privileged \
@@ -10,10 +11,13 @@ docker run -d \
   -v /run/dbus:/run/dbus:ro \
   --network=host \
   ghcr.io/home-assistant/home-assistant:stable \ > /dev/null
-
+```
 #######################################
 #  Samba konfigurierung
+```
 sudo nvim /etc/samba/smb.conf
+```
+```
 [MUSIC_BOT_CONFIG]
    path = /home/gandhi/MusicBot/config
    read only = no
@@ -29,10 +33,14 @@ sudo nvim /etc/samba/smb.conf
    read only = no
    guest ok = yes
    browseable = yes
-
+```
+```
 sudo smbpasswd -a gandhi
+```
+```
 sudo systemctl start smbd
 sudo systemctl restart smbd
+```
 #######################################
 # ufw configuration
 
